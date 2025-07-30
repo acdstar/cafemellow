@@ -1,36 +1,29 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #fffefb;
+  background-color: #fff8f0;
   color: #333;
 }
 
-/* Loading screen */
 #loader {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #fff9f4;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #fff8f0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  z-index: 9999;
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 1.2rem;
-  color: #ff704d;
+  justify-content: center;
+  z-index: 1000;
 }
 
 .spinner {
-  border: 6px solid #f3f3f3;
-  border-top: 6px solid #ff704d;
+  border: 6px solid #ddd;
+  border-top: 6px solid #c77d49;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 50px; height: 50px;
   animation: spin 1s linear infinite;
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
 }
 
 @keyframes spin {
@@ -38,138 +31,88 @@ body {
   100% { transform: rotate(360deg); }
 }
 
-/* Logo section */
+.hero {
+  position: relative;
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .logo-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
   display: flex;
   align-items: center;
-  padding: 1rem;
-  z-index: 2;
+  gap: 15px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px 20px;
+  border-radius: 10px;
 }
 
 .logo-bar .logo {
-  height: 60px;
-  margin-right: 10px;
+  height: 50px;
 }
 
-.hero {
-  background: url('images/hero1.jpg') no-repeat center center/cover;
-  background-size: cover;
-  height: 100vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  text-align: center;
-  transition: background-image 1s ease-in-out;
-}
-
-.hero .overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 2rem;
-  color: white;
-  width: 100%;
+.overlay p {
+  font-size: 1.2rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .cta-btn {
-  background: #ff704d;
+  margin-top: 15px;
+  background-color: #c77d49;
   color: white;
-  padding: 0.75rem 1.5rem;
+  padding: 10px 20px;
   text-decoration: none;
-  margin-top: 1rem;
-  display: inline-block;
-  border-radius: 5px;
   font-weight: bold;
+  border-radius: 5px;
 }
 
-.content, .contact {
-  padding: 2rem;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.features-slider {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  background-color: #fef4e8;
-  padding: 2rem;
-}
-
-.slide {
+.content, .slider-section, .contact {
+  padding: 30px 20px;
   text-align: center;
-  background: #fff;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.slider-section {
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
 }
 
 .vertical-slider {
-  max-height: 300px;
-  overflow-y: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 1rem;
-  scroll-behavior: smooth;
-  padding-right: 5px;
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  margin: 15px auto;
+  max-width: 100%;
 }
 
 .vertical-slider img {
   width: 100%;
-  border-radius: 6px;
+  height: 100%;
   object-fit: cover;
-  height: 150px;
-  transition: transform 0.3s;
-}
-
-.vertical-slider img:hover {
-  transform: scale(1.03);
-}
-
-.contact-buttons {
-  margin-top: 1rem;
+  display: none;
 }
 
 .contact-buttons a {
-  margin: 0.5rem;
-  padding: 0.75rem 1.25rem;
-  background: #25d366;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #c77d49;
   color: white;
   text-decoration: none;
-  border-radius: 4px;
-  display: inline-block;
-}
-
-.instagram-btn {
-  background: #e1306c;
+  border-radius: 5px;
 }
 
 footer {
-  text-align: center;
-  padding: 1rem;
-  background: #333;
+  background-color: #333;
   color: white;
+  text-align: center;
+  padding: 20px;
 }
 
-/* Responsive design */
-@media (min-width: 768px) {
-  .features-slider {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .slide {
-    width: 48%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .slide {
-    width: 23%;
-  }
-}
