@@ -8,7 +8,6 @@
   <meta name="author" content="Cafe Mellow" />
   <title>Cafe Mellow</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
 </head>
 <body>
 
@@ -37,67 +36,56 @@
     <p>We arrange Kitty, Birthday, and every other kind of party from 2 to 200 people.</p>
   </section>
 
-  <section class="features-slider">
-    <div class="slide">
-      <h3>Rooftop & Indoor AC</h3>
-      <div class="vertical-slider">
-        <img src="images/rooftop1.jpg" alt="Rooftop 1">
-        <img src="images/rooftop2.jpg" alt="Rooftop 2">
-        <img src="images/rooftop3.jpg" alt="Rooftop 3">
-        <img src="images/rooftop4.jpg" alt="Rooftop 4">
-        <img src="images/rooftop5.jpg" alt="Rooftop 5">
-      </div>
-      <p>Relax with comfort, whether under the sky or in cozy interiors.</p>
+  <!-- Sliders: Stacked Vertically -->
+  <section class="slider-section">
+    <h3>Rooftop & Indoor AC</h3>
+    <div class="vertical-slider" id="slider1">
+      <img src="images/rooftop1.jpg" alt="Rooftop 1">
+      <img src="images/rooftop2.jpg" alt="Rooftop 2">
+      <img src="images/rooftop3.jpg" alt="Rooftop 3">
+      <img src="images/rooftop4.jpg" alt="Rooftop 4">
+      <img src="images/rooftop5.jpg" alt="Rooftop 5">
     </div>
-
-    <div class="slide">
-      <h3>Game Zone & Disco Hall</h3>
-      <div class="vertical-slider">
-        <img src="images/game1.jpg" alt="Game 1">
-        <img src="images/game2.jpg" alt="Game 2">
-        <img src="images/game3.jpg" alt="Game 3">
-        <img src="images/game4.jpg" alt="Game 4">
-        <img src="images/game5.jpg" alt="Game 5">
-      </div>
-      <p>Bring your friends and enjoy games and parties under one roof.</p>
-    </div>
-
-    <div class="slide">
-      <h3>Events & Parties</h3>
-      <div class="vertical-slider">
-        <img src="images/party1.jpg" alt="Party 1">
-        <img src="images/party2.jpg" alt="Party 2">
-        <img src="images/party3.jpg" alt="Party 3">
-        <img src="images/party4.jpg" alt="Party 4">
-        <img src="images/party5.jpg" alt="Party 5">
-      </div>
-      <p>Book celebrations from intimate gatherings to 200+ people.</p>
-    </div>
-
-    <div class="slide">
-      <h3>BiteBoard</h3>
-      <div class="vertical-slider">
-        <img src="images/food1.jpg" alt="Food 1">
-        <img src="images/food2.jpg" alt="Food 2">
-        <img src="images/food3.jpg" alt="Food 3">
-        <img src="images/food4.jpg" alt="Food 4">
-        <img src="images/food5.jpg" alt="Food 5">
-      </div>
-      <p>Discover what’s cooking — a photo-taste of our boldest bites and soulful sips.</p>
-    </div>
+    <p>Relax with comfort, whether under the sky or in cozy interiors.</p>
   </section>
 
-  <!-- Instagram Feed Section -->
-  <section id="instagram" class="instagram-feed">
-    <h2>📸 From Our Instagram</h2>
-    <iframe src="//lightwidget.com/widgets/2840892f8f9255468a2a92d57cf726ab.html"
-            scrolling="no"
-            allowtransparency="true"
-            class="lightwidget-widget"
-            style="width:100%;border:0;overflow:hidden;">
-    </iframe>
+  <section class="slider-section">
+    <h3>Game Zone & Disco Hall</h3>
+    <div class="vertical-slider" id="slider2">
+      <img src="images/game1.jpg" alt="Game 1">
+      <img src="images/game2.jpg" alt="Game 2">
+      <img src="images/game3.jpg" alt="Game 3">
+      <img src="images/game4.jpg" alt="Game 4">
+      <img src="images/game5.jpg" alt="Game 5">
+    </div>
+    <p>Bring your friends and enjoy games and parties under one roof.</p>
   </section>
 
+  <section class="slider-section">
+    <h3>Events & Parties</h3>
+    <div class="vertical-slider" id="slider3">
+      <img src="images/party1.jpg" alt="Party 1">
+      <img src="images/party2.jpg" alt="Party 2">
+      <img src="images/party3.jpg" alt="Party 3">
+      <img src="images/party4.jpg" alt="Party 4">
+      <img src="images/party5.jpg" alt="Party 5">
+    </div>
+    <p>Book celebrations from intimate gatherings to 200+ people.</p>
+  </section>
+
+  <section class="slider-section">
+    <h3>BiteBoard</h3>
+    <div class="vertical-slider" id="slider4">
+      <img src="images/food1.jpg" alt="Food 1">
+      <img src="images/food2.jpg" alt="Food 2">
+      <img src="images/food3.jpg" alt="Food 3">
+      <img src="images/food4.jpg" alt="Food 4">
+      <img src="images/food5.jpg" alt="Food 5">
+    </div>
+    <p>Discover what’s cooking — a photo-taste of our boldest bites and soulful sips.</p>
+  </section>
+
+  <!-- Contact -->
   <section id="contact" class="contact">
     <h2>Contact Us</h2>
     <p>We’d love to hear from you. Reach us via WhatsApp, Instagram, or visit us directly!</p>
@@ -119,12 +107,10 @@
   </footer>
 
   <script>
-    // Hide loader on full load
     window.addEventListener("load", () => {
       document.getElementById("loader").style.display = "none";
     });
 
-    // HERO IMAGE SLIDESHOW
     const hero = document.querySelector('.hero');
     const heroImages = [
       'images/hero1.jpg', 'images/hero2.jpg',
@@ -141,25 +127,23 @@
     setInterval(updateHeroBackground, 3000);
     updateHeroBackground();
 
-    // AUTO SLIDE FOR VERTICAL SLIDERS
+    // Slider logic: one image at a time, vertical auto scroll
     const sliders = document.querySelectorAll('.vertical-slider');
-
-    function autoScrollSliders() {
-      sliders.forEach((slider) => {
-        const maxScroll = slider.scrollHeight - slider.clientHeight;
-        const scrollStep = slider.clientHeight;
-        const newScroll = slider.scrollTop + scrollStep;
-
-        slider.scrollTo({
-          top: newScroll >= maxScroll ? 0 : newScroll,
-          behavior: 'smooth'
-        });
+    sliders.forEach(slider => {
+      let index = 0;
+      const images = slider.querySelectorAll('img');
+      images.forEach((img, i) => {
+        img.style.display = i === 0 ? 'block' : 'none';
       });
-    }
-
-    setInterval(autoScrollSliders, 3000);
+      setInterval(() => {
+        images[index].style.display = 'none';
+        index = (index + 1) % images.length;
+        images[index].style.display = 'block';
+      }, 3000);
+    });
   </script>
 
 </body>
 </html>
+
 
