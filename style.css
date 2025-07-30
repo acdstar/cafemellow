@@ -86,10 +86,10 @@ body {
 
 .vertical-slider {
   position: relative;
-  height: 750px;
+  height: 500px;
   overflow: hidden;
   margin: 15px auto;
-  max-width: 100%;
+  max-width: 80%;
 }
 
 .vertical-slider img {
